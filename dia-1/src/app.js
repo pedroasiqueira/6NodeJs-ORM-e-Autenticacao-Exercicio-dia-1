@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
+const { BookController } = require('./controllers')
 
 app.use(express.json());
 
-module.exports= app;
+app.get('/books', BookController.getAll);
+
+module.exports = app;
